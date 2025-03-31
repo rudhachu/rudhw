@@ -1,4 +1,5 @@
 const { rudhra, mode, commands, PREFIX } = require("../lib");
+const version = require("../package.json").version;
 const config = require("../config");
 const { hostname } = require("os");
 
@@ -38,19 +39,21 @@ Description: ${i.desc}\`\`\``);
       let [date, time] = new Date()
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
-      let menu = `╔═══❮ *${config.BOT_INFO.split(";")[0]}* ❯═══•
-║╔═══════════════◉
-║║ *User* : ${message.pushName}
-║║ *Prefix* : ${PREFIX}
-║║ *Server* : ${hostname().split("-")[0]}
-║║ *Date* : ${date}
-║║ *Time* : ${time}
-║║ *Comments* : ${commands.length} 
+      let menu = `╔════════════════════•
+║╔═════════════════◉
+║║   *User* : ${message.pushName}
+║║   *Bot Name* : ${config.BOT_NAME} 
+║║   *Version*  : ${version}
+║║   *Mode*  : ${config.MODE}
+║║   *Prefix* : ${PREFIX}
+║║   *Server* : ${hostname().split("-")[0]}
+║║   *Date* : ${date}
+║║   *Comments* : ${commands.length} 
 ║║
-║║    █║▌║▌║║▌║ █
-║║     ʀ   ᴜ   ᴅ   ʜ   ʀ   ᴀ
-║╚═══════════════◉
-╚═════════════════•\n`;
+║║      █║▌║▌║║▌║ █
+║║       ʀ   ᴜ   ᴅ   ʜ   ʀ   ᴀ
+║╚═════════════════◉
+╚════════════════════•\n`;
       let cmnd = [];
       let cmd;
       let category = [];
@@ -69,16 +72,17 @@ Description: ${i.desc}\`\`\``);
       });
       cmnd.sort();
       category.sort().forEach((cmmd) => {
-        menu += `╔╔══❮ *${cmmd.toUpperCase()}* ❯`;
+        menu += `╔═══❮ *${cmmd.toUpperCase()}* ❯═══◆`;
+        menu += `║╔═══════════════▸`;
+        menu += `\n║║`;
         let comad = cmnd.filter(({ type }) => type == cmmd);
         comad.forEach(({ cmd }) => {
-          menu += `\n║║  ${PREFIX} ${cmd.trim()} `;
+          menu += `\n║║▸  ${cmd.trim()} `;
         });
-        menu += `\n`;
-      });
         menu += `\n║║`;
-      menu += `\n║╚═══════════⭓`;
-      menu += `\n╚══════════════◉`;
+      menu += `\n║╚═══════════════▸`;
+      menu += `\n╚═════════════════◆`;
+      menu += `\n\n${config.BOT_NAME}`;
       return await  message.send(menu, {
     contextInfo: {
 externalAdReply: {
