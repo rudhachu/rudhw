@@ -19,6 +19,7 @@ module.exports = {
   ANTILINK: toBool(process.env.ANTI_LINK) || true,
   AUDIO_DATA: process.env.AUDIO_DATA || "𝗥𝗨𝗗𝗛𝗥𝗔 𝗕𝗢𝗧;Ƥ ʀ ɪ ɴ ᴄ ᴇ  Ʀ ᴜ ᴅ ʜ;https://raw.githubusercontent.com/rudhraan/media/main/image/rudhra2.jpg",
   BOT_INFO: process.env.BOT_INFO || "ʀᴜᴅʜʀᴀ ʙᴏᴛ;Ƥ ʀ ɪ ɴ ᴄ ᴇ  Ʀ ᴜ ᴅ ʜ;https://raw.githubusercontent.com/rudhraan/media/main/image/rudhra2.jpg",
+  BOT_NAME: process.env.BOT_NAME || "ʀᴜᴅʜʀᴀ ʙᴏᴛ",
   CAPTION: process.env.CAPTION || "ʀᴜᴅʜʀᴀ ʙᴏᴛ",
   DELETED_LOG_CHAT: process.env.DELETED_LOG_CHAT || false,
   DISABLE_PM: toBool(process.env.DISABLE_PM) || false,
