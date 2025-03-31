@@ -20,7 +20,7 @@
   "author": "princerudh",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@adiwajshing/baileys": "github:princerudh/Baileys.js",
+    "@adiwajshing/baileys": "npm:@fizzxydev/baileys-pro@latest",
     "axios": "^1.6.0",
     "bitly": "^7.1.2",
     "browser-id3-writer": "^5.0.0",
