@@ -1,5 +1,4 @@
 const { rudhra, mode, commands, PREFIX } = require("../lib");
-const { OWNER_NAME, BOT_NAME } = require("../config");
 const config = require("../config");
 const { hostname } = require("os");
 
@@ -39,7 +38,7 @@ Description: ${i.desc}\`\`\``);
       let [date, time] = new Date()
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
-      let menu = `╔═══❮ *${BOT_NAME}* ❯═══•
+      let menu = `╔═══❮ *${config.BOT_INFO.split(";")[0]}* ❯═══•
 ║╔═══════════════◉
 ║║ *User* : ${message.pushName}
 ║║ *Prefix* : ${PREFIX}
@@ -83,14 +82,14 @@ Description: ${i.desc}\`\`\``);
       return await  message.send(menu, {
     contextInfo: {
 externalAdReply: {
-                    title: config.BOT_NAME,
-                    body: config.OWNER_NAME,
+                    title: config.LINK_PREVIEW.split(";")[0],
+                    body: config.LINK_PREVIEW.split(";")[1],
                     sourceUrl: "https://github.com/princerudh/rudhra-bot",
                     mediaUrl: "https://instagram.com",
                     mediaType: 1,
                     showAdAttribution: true,
                     renderLargerThumbnail: false,
-                    thumbnailUrl: "https://raw.githubusercontent.com/rudhra-prh/media/refs/heads/main/image/botra.png"
+                    thumbnailUrl: config.LINK_PREVIEW.split(";")[2]
                 }
     },
   });
